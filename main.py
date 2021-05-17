@@ -851,7 +851,7 @@ class Game:
     area = savedata['area']
     moons = savedata['moon']
     pis = savedata['pi']
-    colds = savedata['colds']
+    colds = savedata['cold']
     self.update()
     #Close the file
     inputfile.close()
