@@ -717,7 +717,7 @@ class Game:
       crystal -= 3
       if moons == True and colds == True and pis == True:
         self.lava.destroy()
-        self.ending2()
+        self.ending2(
       else:
         self.lava.destroy()
         self.inven.destroy()
