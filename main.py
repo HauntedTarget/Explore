@@ -717,7 +717,7 @@ class Game:
       crystal -= 3
       if moons == True and colds == True and pis == True:
         self.lava.destroy()
-        self.lightphoto()
+        self.ending2()
       else:
         self.lava.destroy()
         self.inven.destroy()
@@ -855,8 +855,22 @@ class Game:
     self.update()
     #Close the file
     inputfile.close()
-  def lightphoto(self):
-    print("[UNFINISHED COMMAND]")
+  #Secret ending screen for this version
+  def ending2(self):
+    #Sets the window attributes and the background image
+    self.end2 = tkin.Toplevel(self.start)
+    self.end2.title("THE SECRET")
+    self.end2.geometry('400x420')
+    self.end2.iconphoto(False, self.icon2)
+    self.image = tkin.Frame(self.end2)
+    self.bg3 = tkin.PhotoImage(file = "Alleyway.png")
+    self.background = tkin.Label(self.image,image=self.bg3)
+    self.background.pack(side='top')
+    self.image.pack(side='top')
+    self.infotext = tkin.Label(self.end2,text='YOU ESCAPED!!!')
+    self.infotext.pack(side='top')
+    i = open('savefile.dat','wb')
+    i.close()
 
 
 #print('[UNFINISHED COMMAND]')
