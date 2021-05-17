@@ -714,14 +714,14 @@ class Game:
     global colds
     global crystal
     if crystal >= 3:
-      crystal -= 3
-      if moons == True and colds == True and pis == True:
+      #crystal -= 3
+      #if moons == True and colds == True and pis == True:
         self.lava.destroy()
         self.lightphoto()
-      else:
-        self.lava.destroy()
-        self.inven.destroy()
-        self.ending()
+      #else:
+        #self.lava.destroy()
+        #self.inven.destroy()
+        #self.ending()
     else:
       self.text.set('The Door is Locked by 3 Crystal Slots.')
   #Opens the tundra window ONLY if the user is wearing a coat
@@ -855,8 +855,50 @@ class Game:
     self.update()
     #Close the file
     inputfile.close()
+  #The darkroom window
   def lightphoto(self):
-    print("[UNFINISHED COMMAND]")
+    self.light = True
+    #Sets the window attributes and the background image
+    self.dark = tkin.Toplevel(self.start)
+    self.dark.title("Photo Room")
+    self.dark.geometry('400x460')
+    self.dark.iconphoto(False, self.icon)
+    self.image = tkin.Frame(self.dark)
+    self.bg3 = tkin.PhotoImage(file = "BrightDarkroom.png")
+    self.background = tkin.Label(self.image,image=self.bg3)
+    self.background.pack(side='top')
+    self.image.pack(side='top')
+    self.infotext = tkin.Label(self.dark,text='The Darkroom')
+    self.infotext.pack(side='top')
+    #Choice buttons for Window
+    self.choice = tkin.Frame(self.dark)
+    self.door = tkin.Button(self.choice,text='Go Trough Door',command = self.darktoalley)
+    self.lights = tkin.Button(self.choice,text='Toggle Light',command=self.lighttoggle)
+    self.tablelight = tkin.Button(self.choice,text='Look at Light',command = self.darktophoto)
+    self.door.pack(side='left')
+    self.lights.pack(side='left')
+    self.tablelight.pack(side='left')
+    self.choice.pack(side='top')
+    self.tablelight.pack_forget()
+  #Sends the user to the alleyway from the darkroom
+  def darktoalley(self):
+    print('[UNFINISHED COMMAND]')
+  #Toggles the image and visibility of a button
+  def lighttoggle(self):
+    if self.image == True:
+      img2 = tkin.PhotoImage(file = 'DarkDarkroom.png')
+      self.background.configure(image=img2)
+      self.background.image = img2
+      self.image = False
+      self.tablelight.pack(side='left')
+    else:
+      self.background.configure(image=self.bg3)
+      self.image = True
+      self.tablelight.pack_forget()
+  #Either sends the user to the photo from the darkroom or opens the negetive secret
+  def darktophoto(self):
+    print('[UNFINISHED COMMAND]')
+  
 
 
 #print('[UNFINISHED COMMAND]')
