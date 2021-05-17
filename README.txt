@@ -2,4 +2,5 @@ This game was made by Christian Audin Messenger. This is a game based in python 
 
 V1 Playtest Credits:
   Steven Carr
+  Nia
   
