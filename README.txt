@@ -3,7 +3,7 @@ This game was made by Christian Audin Messenger. This is a game based in python 
 Game Feature Playtests Credits (Either Name or Nickname They Chose):
   Yug Patel
   Steven Carr
-  Emily (The One Who Usually Sits Behind Us All)
+  Emily Skivers
   Mr. Melendez
   
 V1 Playtest Credits (Either Name or Nickname They Chose):
