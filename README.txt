@@ -10,3 +10,5 @@ V1 Playtest Credits (Either Name or Nickname They Chose):
   Steven Carr
   Nia
   Som3Body15
+  Emily Skivers
+  Yug Patel
