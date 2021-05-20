@@ -5,6 +5,7 @@ Game Feature Playtests Credits (Either Name or Nickname They Chose):
   Steven Carr
   Emily Skivers
   Mr. Melendez
+  Mary Mae Waldron
 
 V1 Playtest Credits (Either Name or Nickname They Chose):
   Steven Carr
