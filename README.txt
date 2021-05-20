@@ -13,3 +13,4 @@ V1 Playtest Credits (Either Name or Nickname They Chose):
   Som3Body15
   Emily Skivers
   Yug Patel
+  Marymae Waldron
