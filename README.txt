@@ -14,3 +14,6 @@ V1 Playtest Credits (Either Name or Nickname They Chose):
   Emily Skivers
   Yug Patel
   Marymae Waldron
+
+V2 Playtester Credits (Either Name or Nickname They Chose):
+  Haddy Achy

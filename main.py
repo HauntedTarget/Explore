@@ -714,14 +714,14 @@ class Game:
     global colds
     global crystal
     if crystal >= 3:
-      #crystal -= 3
-      #if moons == True and colds == True and pis == True:
+      crystal -= 3
+      if moons == True and colds == True and pis == True:
         self.lava.destroy()
         self.lightphoto()
-      #else:
-        #self.lava.destroy()
-        #self.inven.destroy()
-        #self.ending()
+      else:
+        self.lava.destroy()
+        self.inven.destroy()
+        self.ending()
     else:
       self.text.set('The Door is Locked by 3 Crystal Slots.')
   #Opens the tundra window ONLY if the user is wearing a coat
@@ -882,23 +882,64 @@ class Game:
     self.tablelight.pack_forget()
   #Sends the user to the alleyway from the darkroom
   def darktoalley(self):
-    print('[UNFINISHED COMMAND]')
+    self.dark.destroy()
+    self.alleyway()
   #Toggles the image and visibility of a button
   def lighttoggle(self):
-    if self.image == True:
+    if self.light == True:
       img2 = tkin.PhotoImage(file = 'DarkDarkroom.png')
       self.background.configure(image=img2)
       self.background.image = img2
-      self.image = False
+      self.light = False
       self.tablelight.pack(side='left')
     else:
       self.background.configure(image=self.bg3)
-      self.image = True
+      self.light = True
       self.tablelight.pack_forget()
   #Either sends the user to the photo from the darkroom or opens the negetive secret
   def darktophoto(self):
     print('[UNFINISHED COMMAND]')
-  
+  #The alleyway window
+  def alleyway(self):
+    #Sets the window attributes and the background image
+    self.alley = tkin.Toplevel(self.start)
+    self.alley.title("Alley")
+    self.alley.geometry('400x490')
+    self.alley.iconphoto(False, self.icon)
+    self.image = tkin.Frame(self.alley)
+    self.bg3 = tkin.PhotoImage(file = "Alleyway.png")
+    self.background = tkin.Label(self.image,image=self.bg3)
+    self.background.pack(side='top')
+    self.image.pack(side='top')
+    self.infotext = tkin.Label(self.alley,text='The Alleyway')
+    self.infotext.pack(side='top')
+    #Choice buttons for Window
+    self.choice = tkin.Frame(self.alley)
+    self.choice2 = tkin.Frame(self.alley)
+    self.lef = tkin.Button(self.choice,text='Left Door',command=self.alleytodungeon)
+    self.back = tkin.Button(self.choice,text='Back to Darkroom',command = self.alleytodark)
+    self.rig = tkin.Button(self.choice,text='Right Door',command=self.alleytokitchen)
+    self.fore = tkin.Button(self.choice2,text='Down the Alleyway',command=self.alleytoshade)
+    self.lef.pack(side='left')
+    self.back.pack(side='left')
+    self.rig.pack(side='left')
+    self.fore.pack(side='left')
+    self.choice.pack(side='top')
+    self.choice2.pack(side='top')
+    self.tablelight.pack_forget()
+  #Sends the user to the darkroom from the alleyway
+  def alleytodark(self):
+    self.alley.destroy()
+    self.lightphoto()
+  #Sends the user to the dungeon hall from the alley
+  def alleytodungeon(self):
+    print('[UNFINISHED COMMAND]')
+  #sends the user from the alley to the kitchen
+  def alleytokitchen(self):
+    print('[UNFINISHED COMMAND]')
+  #sends the user from the alley to Mr. Shade
+  def alleytoshade(self):
+    print('[UNFINISHED COMMAND]')
 
 
 #print('[UNFINISHED COMMAND]')
